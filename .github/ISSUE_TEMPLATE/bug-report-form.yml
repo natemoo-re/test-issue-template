@@ -1,0 +1,68 @@
+name: "\U0001F41B Bug Report"
+about: Report an issue or possible bug
+title: "\U0001F41B <TITLE>"
+labels: ''
+assignees: ''
+body:
+  - type: checkboxes
+    id: latest_version
+    attributes:
+      label: Bug Report Checklist
+      options:
+        - label: I am on the latest version of Astro & all plugins.
+          required: true
+  - type: dropdown
+    id: node_version
+    attributes:
+      label: Node Version
+      description: What version of `node` are you running?
+      options:
+        - v12.20.0+
+        - v14.13.1+
+        - v16.0.0+
+    validations:
+      required: true
+  - type: dropdown
+    id: pkg
+    attributes:
+      label: Package Manager
+      description: What package manager are you using?
+      options:
+        - node@6
+        - node@7
+        - yarn@1
+        - yarn@2
+        - pnpm
+        - other
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: What OS are you using?
+      options:
+        - Windows
+        - Linux
+        - macOS
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Describe the bug
+      description: A quick, clear, concise summary of what the bug is.
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: We can't fix bugs that we can't see for ourselves. Issues often need to be closed if this section is skipped.
+      value:
+        1. `npm init astro` using template <NAME>
+        2. ...
+        3. ...
+        4. ...
+        5. Error! Describe what went wrong...
